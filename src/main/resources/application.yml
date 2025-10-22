@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: Bank_REST
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:db}:${POSTGRES_PORT:5432}/${POSTGRES_DB:bankrest}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+    database: postgresql
+  liquibase:
+    change-log: classpath:db/changelog-master.yaml
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://idp.rest.com/issuer
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework: DEBUG
