@@ -1,6 +1,6 @@
 # 💳 Bank Card Management System
 
-A backend application built with **Kotlin (Spring Boot)** for managing bank cards.
+A backend application built with **Kotlin, Spring Boot** for managing bank cards.
 It allows administrators to manage users and cards, and users to perform secure operations with their own cards such as viewing balances, transferring funds, and requesting card blocks.
 Security is ensured via **JWT authentication, role-based access,** and **data encryption**.
 
@@ -21,7 +21,7 @@ ____
 
 ### 👤 User
 
-- View own cards (search + pagination)
+- View own cards (search & pagination)
 - Request card blocking
 - Transfer funds between own cards
 - Check balance
@@ -62,11 +62,11 @@ ____
 
     ```
     JWT_SECRET=your_generated_jwt_secret
-    MYSQL_HOST=localhost
-    MYSQL_PORT=3306
-    MYSQL_DB=bankrest
-    MYSQL_USER=root
-    MYSQL_PASSWORD=your_password
+    POSTGRES_HOST=localhost
+    POSTGRES_PORT=3306
+    POSTGRES_DB=bankrest
+    POSTGRES_USER=root
+    POSTGRES_PASSWORD=your_password
 
 2. **Build & Run with Docker Compose**
 
